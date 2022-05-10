@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <script>
+        function login(e) {
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'email': document.getElementById('emailField').value,
+                    'password': document.getElementById('passwordField').value
+                })
+            }).then((r) => r.json()).then((d) => {
+                if (d.status === 'Success') {
+                    alert('Logged In');
+                    window.location = '/dashboard.html'
+                } else
+                    alert('Error logging in')
+            });
+        }
+    </script>
+
+    <div class="container">
+        <div class="mainContainer">
+            <div class="loginContainer">
+                <h2>Login</h2>
+                <input type='text' placeholder='Email' id='emailField' /><br />
+                <input type='password' placeholder='Password' id='passwordField' /><br />
+                <a href='' id='loginForgotPassword'>Forgot Password?</a><br /><br />
+                <input type="Submit" onClick="login()" defaultValue="Login" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
