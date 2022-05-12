@@ -1,3 +1,3 @@
-### Girls In Tech Workshops  
+### Metazu Workshops  
 
 #### This repo contains projects for different workshops
