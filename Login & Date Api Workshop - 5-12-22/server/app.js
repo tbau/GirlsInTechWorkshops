@@ -5,9 +5,9 @@ const path = require('path');
 const app = express();
 __basedir = __dirname;
 
-const logins = require(path.join(__basedir, '../', 'logins.json'));
+const LOGINS = require(path.join(__basedir, '../', 'logins.json'));
 
-const port = 80;
+const PORT = process.env.PORT || 80;
 
 const SRC_DIR = path.join(__dirname, '../src');
 const LOGIN_FILE = path.join(SRC_DIR, 'index.html');
@@ -33,9 +33,9 @@ app.get('/dashboard.html', loginMiddleware, function(req, res) {
 })
 
 app.post('/login', function(req, res) {
-    if (req.body.email == logins.email &&
-        req.body.password == logins.password) {
-        req.session.email = logins.email;
+    if (req.body.email == LOGINS.email &&
+        req.body.password == LOGINS.password) {
+        req.session.email = LOGINS.email;
         console.log(`User ${req.body.email} logged in`)
         res.json({ 'status': 'Success' });
     } else {

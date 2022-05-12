@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "Api Demo",
     "scripts": {
-        "start": "node --inspect server/app.js"
+        "start": "node server/app.js",
+        "debug": "node --inspect server/app.js"
     },
     "license": "ISC",
     "dependencies": {
