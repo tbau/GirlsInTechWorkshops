@@ -53,6 +53,6 @@ app.get('/weather', loginMiddleware, function(req, res) {
 
 app.use(express.static("src"));
 
-app.listen(port, function() {
+app.listen(PORT, function() {
     console.log("Example app listening at http://localhost:%s", port);
 })
