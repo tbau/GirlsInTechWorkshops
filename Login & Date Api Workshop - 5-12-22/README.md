@@ -44,3 +44,11 @@
    2. Open a browser (preferably Chrome), then type http://localhost:80 into the browser and press enter. 
    3. You should see the app running. 
    4. If you want to stop the app, press Ctrl+c in the terminal to stop it.
+
+9. Heroku deploy instructions
+   1. Download Heroku-CLI.  
+   2. Login to Heroku and create a new application.  
+   3. Run heroku git:remote -a followed by the name of the application you made.  
+   4. In the root directory run git subtree push --prefix "Login & Date Api Workshop - 5-12-22" heroku main. 
+   5. If you don't have any web apps scaled, run heroku ps:scale web=1.  
+   6. Go to the app in Heroku and open the app.
